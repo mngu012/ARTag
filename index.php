@@ -1,8 +1,10 @@
 <script>
+/*
 if (location.protocol != 'https:')
 {
  location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
 }
+*/
 </script>
 <?php
  if( isset($_GET["i"]) )
@@ -20,7 +22,7 @@ header( "refresh:0;url=pin");
  }
  else
  {
- header( "refresh:0;url=autlive");
+ header( "refresh:0;url=pin");
  }
 ?>
 <html>
