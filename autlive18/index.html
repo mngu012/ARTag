@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AUT AR WebApp</title>
+    <meta charset="utf-8">
+	<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+	<script src="../js/a-frame.js"> </script>
+	<script src="../js/hammer.min.js"> </script>
+	<script src="../js/pinch.js"> </script>
+	<script src="../js/aframe-extras.min.js"> </script>
+	<!--Necessary styling for sliders div to appear on top of ar js      -->
+    <link rel="stylesheet" type="text/css" href="../css/ar-gesture.css">
+  </head>
+  <body>
+    <a-scene embedded arjs="trackingMethod: best; debugUIEnabled: false; cameraParametersUrl: ../data/camera_para.dat; patternRatio: 0.90;">
+        <a-marker type='pattern' url="pattern-marker.patt" class="marker" gesture>
+            <a-entity>
+				<a-gltf-model src="scene.gltf" scale="1.2 1.2 1.2" animation-mixer>
+				</a-gltf-model>
+        	</a-entity>
+        </a-marker>
+
+		<a-entity camera></a-entity>
+		<div id="zoom-slider"></div>
+    </a-scene>
+	<input type="hidden" id="scaleID" name="scaleID" value="1.2">
+    <script src="../js/destopGesture.js"></script>
+  </body>
+</html>
